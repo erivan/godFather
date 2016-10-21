@@ -5,13 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.app.godfather.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by root on 21/10/16.
  */
 public class HomeActivity extends AppCompatActivity {
+
+    private HomeFragment mHomeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +18,14 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.home_act);
 
 
-        HomeFragment homeFragment =
-                (HomeFragment) getSupportFragmentManager()
-                        .findFragmentById(R.id.home_content_frame);
+        mHomeFragment = HomeFragment.newInstance();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.home_content_frame, mHomeFragment).commit();
 
-        if (homeFragment == null){
-            homeFragment = HomeFragment.newInstance();
+        if (mHomeFragment == null){
+            mHomeFragment = HomeFragment.newInstance();
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.home_content_frame, homeFragment).commit();
+                    .add(R.id.home_content_frame, mHomeFragment).commit();
         }
 
     }

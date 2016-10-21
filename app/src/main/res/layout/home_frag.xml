@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9AC6FF">
+    android:background="@color/primaryBlue">
 
     <LinearLayout
         android:layout_margin="16dp"
@@ -33,12 +35,15 @@
                 android:layout_height="wrap_content">
 
 
-                <com.github.siyamed.shapeimageview.mask.PorterCircularImageView
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/btn_go_to_addict_form"
                     android:layout_gravity="center"
-                    android:background="@android:color/transparent"
+                    android:scaleType="centerCrop"
+                    android:background="?selectableItemBackground"
                     android:src="@mipmap/ic_addict_heart"
                     android:layout_width="90dp"
-                    android:layout_height="90dp" />
+                    android:layout_height="90dp"
+                    app:theme="@style/Hover"/>
 
                 <TextView
                     android:textStyle="bold"
@@ -59,12 +64,15 @@
                 android:layout_height="wrap_content">
 
 
-                <com.github.siyamed.shapeimageview.mask.PorterCircularImageView
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/btn_go_to_god_father_form"
+                    android:scaleType="centerCrop"
                     android:layout_gravity="center"
-                    android:background="@android:color/transparent"
+                    android:background="?selectableItemBackground"
                     android:src="@mipmap/ic_godfather_option"
                     android:layout_width="90dp"
-                    android:layout_height="90dp" />
+                    android:layout_height="90dp"
+                    app:theme="@style/Hover"/>
 
                 <TextView
                     android:textStyle="bold"

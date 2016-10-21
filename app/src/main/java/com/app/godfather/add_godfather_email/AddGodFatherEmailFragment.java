@@ -28,6 +28,6 @@ public class AddGodFatherEmailFragment extends Fragment {
         View view = inflater.inflate(R.layout.add_godfather_email_frag, container, false);
         ButterKnife.bind(this, view);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return view;
     }
 }

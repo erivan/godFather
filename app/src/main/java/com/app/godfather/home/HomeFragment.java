@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.app.godfather.R;
 import com.app.godfather.addyouremail.AddYourEmailActivity;
+import com.app.godfather.experiences.ExperiencesActivity;
+import com.app.godfather.infrastructure.UserSession;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -32,20 +34,11 @@ public class HomeFragment extends Fragment implements HomeContract.View {
        View view = inflater.inflate(R.layout.home_frag, container, false);
         ButterKnife.bind(this, view);
 
-//        ExperienceRepository.getInstance().save(new Experience("New Experience", new Date()));
-//
-//        ExperienceRepository.getInstance().all(new LoadExperiencesCallback() {
-//            @Override
-//            public void onSuccess(List<Experience> experiences) {
-//                Log.d("HERE", experiences.size() + "");
-//                for(Experience experience : experiences) {
-//                }
-//            }
-//        });
-
-//        User user = new User("god_fathermail@example.com", User.GOD_FATHER);
-//        user.addSonEmail("ermailexamplecom");
-//        UserRepository.getInstance().save(user);
+        UserSession userSession = new UserSession(getContext());
+        if (userSession.getSessionEmail() != null) {
+            Intent i = new Intent(getContext(), ExperiencesActivity.class);
+            startActivity(i);
+        }
 
 
         return view;

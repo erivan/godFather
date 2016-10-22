@@ -12,7 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.app.godfather.R;
+import com.app.godfather.domain.entity.User;
 import com.app.godfather.experiences.ExperiencesActivity;
+import com.app.godfather.infrastructure.UserRepository;
 import com.app.godfather.utils.ValidationErrorWrapper;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -69,7 +71,6 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), ExperiencesActivity.class);
-
                 startActivity(i);
             }
         });
@@ -88,6 +89,8 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
 
     @Override
     public void onValidationSucceeded() {
+        User user = new User(mFillGodfatherEmail.getText().toString(), User.GOD_FATHER);
+        UserRepository.getInstance().save(user);
         welcomeDialog.show();
     }
 

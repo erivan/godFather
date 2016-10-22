@@ -3,19 +3,20 @@ package com.app.godfather.addyouremail;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.app.godfather.R;
 import com.app.godfather.addgodfatheremail.AddGodFatherEmailActivity;
 import com.app.godfather.domain.entity.User;
+import com.app.godfather.experiences.ExperiencesActivity;
+import com.app.godfather.godsons.GodsonsActivity;
 import com.app.godfather.infrastructure.UserRepository;
+import com.app.godfather.infrastructure.UserRepository.LoadUserCallback;
 import com.app.godfather.infrastructure.UserSession;
 import com.app.godfather.utils.ValidationErrorWrapper;
 import com.mobsandgeeks.saripaar.ValidationError;
@@ -34,6 +35,8 @@ import butterknife.OnClick;
  */
 public class AddYourEmailFragment extends Fragment implements  Validator.ValidationListener, AddYourEmailContract.View{
 
+    public static final String KEY_CHEMICAL_DEPENDENT_EMAIL = "KEY_CHEMICAL_DEPENDENT_EMAIL";
+
     @BindView(R.id.add_your_email_layout)
     TextInputLayout mAddYourEmailInputLayout;
 
@@ -47,16 +50,15 @@ public class AddYourEmailFragment extends Fragment implements  Validator.Validat
     private Validator mValidator;
     private boolean isAddict;
 
-    public static AddYourEmailFragment newInstance(boolean userType){
+    public static AddYourEmailFragment newInstance(boolean isAddict){
         AddYourEmailFragment fragment = new AddYourEmailFragment();
 
-        fragment.isAddict = userType;
+        fragment.isAddict = isAddict;
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.add_your_email_frag, container, false);
         ButterKnife.bind(this, view);
 
@@ -75,17 +77,24 @@ public class AddYourEmailFragment extends Fragment implements  Validator.Validat
         if (isAddict){
             user = new User(mFillYourLayoutEmail.getText().toString(), User.CHEMICAL_DEPENDENT);
             UserRepository.getInstance().save(user);
+            UserSession userSession = new UserSession(getContext());
+            userSession.newSession(user.getEmail());
+
             Intent intent = new Intent(getContext(), AddGodFatherEmailActivity.class);
+            intent.putExtra(KEY_CHEMICAL_DEPENDENT_EMAIL, user.getEmail());
             startActivity(intent);
         }else{
-            user = new User(mFillYourLayoutEmail.getText().toString(), User.GOD_FATHER);
-            UserRepository.getInstance().save(user);
-            Toast.makeText(getContext(), "GODFATHER", Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(getContext(), AddGodFatherEmailActivity.class);
-//            startActivity(intent);
+            UserRepository.getInstance().findByEmail(mFillYourLayoutEmail.getText().toString(), new LoadUserCallback() {
+                @Override
+                public void onSuccess(User user) {
+                    UserSession userSession = new UserSession(getContext());
+                    userSession.newSession(user.getEmail());
+
+                    Intent intent = new Intent(getContext(), GodsonsActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
-        UserSession userSession = new UserSession(getContext());
-        userSession.newSession(user.getEmail());
     }
 
     @Override

@@ -10,7 +10,11 @@ import android.view.ViewGroup;
 
 import com.app.godfather.R;
 import com.app.godfather.addyouremail.AddYourEmailActivity;
+import com.app.godfather.domain.entity.User;
 import com.app.godfather.experiences.ExperiencesActivity;
+import com.app.godfather.godsons.GodsonsActivity;
+import com.app.godfather.infrastructure.UserRepository;
+import com.app.godfather.infrastructure.UserRepository.LoadUserCallback;
 import com.app.godfather.infrastructure.UserSession;
 
 import butterknife.ButterKnife;
@@ -36,8 +40,20 @@ public class HomeFragment extends Fragment implements HomeContract.View {
 
         UserSession userSession = new UserSession(getContext());
         if (userSession.getSessionEmail() != null) {
-            Intent i = new Intent(getContext(), ExperiencesActivity.class);
-            startActivity(i);
+            UserRepository.getInstance().findByEmail(userSession.getSessionEmail(), new LoadUserCallback() {
+                @Override
+                public void onSuccess(User user) {
+                    if (user.getType() == User.GOD_FATHER) {
+                        Intent i = new Intent(getContext(), GodsonsActivity.class);
+                        startActivity(i);
+                    }
+                    if (user.getType() == User.CHEMICAL_DEPENDENT) {
+                        Intent i = new Intent(getContext(), ExperiencesActivity.class);
+                        startActivity(i);
+                    }
+                }
+            });
+
         }
 
 

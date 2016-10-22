@@ -36,7 +36,7 @@
         </activity>
 
         <activity android:name=".godsons.GodsonsActivity"
-            android:theme="@style/AppTheme.ActionBarTheme">
+                  android:theme="@style/AppTheme.ActionBarTheme">">
 
         </activity>
         <!-- FirebaseInstanceIdService performs security checks at runtime,

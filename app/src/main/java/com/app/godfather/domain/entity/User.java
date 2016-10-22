@@ -13,11 +13,18 @@ public class User {
     private String email;
     private int type;
     private List<String> godSonEmails;
+    private List<String> godFatherEmails;
+
+    public User() {
+        this.godSonEmails = new ArrayList<String>();
+        this.godFatherEmails = new ArrayList<String>();
+    }
 
     public User(String email, int type) {
         this.email = email;
         this.type = type;
         this.godSonEmails = new ArrayList<String>();
+        this.godFatherEmails = new ArrayList<String>();
     }
 
     public String getEmail() {
@@ -30,6 +37,15 @@ public class User {
 
     public List<String> getGodSonEmails(){
         return godSonEmails;
+    }
+
+
+    public List<String> getGodFatherEmails(){
+        return godFatherEmails;
+    }
+
+    public void addFatherEmail(String email) {
+        getGodFatherEmails().add(email);
     }
 
     public void addSonEmail(String email) {

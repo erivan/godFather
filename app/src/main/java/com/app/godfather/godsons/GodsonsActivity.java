@@ -15,16 +15,16 @@ public class GodsonsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.experiences_act);
+        setContentView(R.layout.godsons_act);
 
         mGodsonsFragment = GodsonsFragment.newInstance();
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.experiences_content_frame, mGodsonsFragment).commit();
+                .add(R.id.godsons_content_frame, mGodsonsFragment).commit();
 
         if (mGodsonsFragment == null){
             mGodsonsFragment = GodsonsFragment.newInstance();
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.experiences_content_frame, mGodsonsFragment).commit();
+                    .add(R.id.godsons_content_frame, mGodsonsFragment).commit();
         }
 
     }

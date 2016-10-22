@@ -14,6 +14,7 @@ import com.app.godfather.R;
 import com.app.godfather.addgodfatheremail.AddGodFatherEmailActivity;
 import com.app.godfather.domain.entity.User;
 import com.app.godfather.experiences.ExperiencesActivity;
+import com.app.godfather.godsons.GodsonsActivity;
 import com.app.godfather.infrastructure.UserRepository;
 import com.app.godfather.infrastructure.UserRepository.LoadUserCallback;
 import com.app.godfather.infrastructure.UserSession;
@@ -89,7 +90,7 @@ public class AddYourEmailFragment extends Fragment implements  Validator.Validat
                     UserSession userSession = new UserSession(getContext());
                     userSession.newSession(user.getEmail());
 
-                    Intent intent = new Intent(getContext(), ExperiencesActivity.class);
+                    Intent intent = new Intent(getContext(), GodsonsActivity.class);
                     startActivity(intent);
                 }
             });

@@ -17,8 +17,6 @@ public class ExperiencesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.experiences_act);
 
-
-
         mExperiencesFragment = ExperiencesFragment.newInstance();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.experiences_content_frame, mExperiencesFragment).commit();

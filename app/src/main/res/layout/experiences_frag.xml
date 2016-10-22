@@ -9,7 +9,7 @@
     >
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/item_method_toolbar"
+        android:id="@+id/godsons_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#9AC6FF"

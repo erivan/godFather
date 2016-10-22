@@ -7,12 +7,13 @@ import java.util.List;
  */
 public class ExperiencesContract {
 
-//    interface View extends BaseView<Presenter> {
-//
-//        void showExperiences(List<String> experiences);
-//    }
-//
-//    interface Presenter extends BasePresenter {
-//        void loadExperiences(List<String> experiences);
-//    }
+    interface View {
+        void callHelp();
+        void shareExperience();
+    }
+
+    interface Presenter{
+        void loadGodsons(String godFatherGuid);
+    }
+
 }

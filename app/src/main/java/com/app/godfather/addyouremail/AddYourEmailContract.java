@@ -6,13 +6,7 @@ package com.app.godfather.addyouremail;
 public interface AddYourEmailContract {
 
     interface View {
-
-        void goToNextScreen();
-
-    }
-
-    interface Presenter{
-
+        void saveExperience();
     }
 
 }

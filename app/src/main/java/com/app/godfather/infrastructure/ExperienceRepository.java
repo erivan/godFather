@@ -7,7 +7,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -44,12 +44,13 @@ public class ExperienceRepository {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                List<Experience> experiences = new ArrayList<>();
+                List<Experience> experiences = ExperienceBase.getExperiences();
 
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    Experience experience = dataSnapshot.getValue(Experience.class);
+                for (DataSnapshot dataSnapshot2 : dataSnapshot.getChildren()) {
+                    Experience experience = dataSnapshot2.getValue(Experience.class);
                     experiences.add(experience);
                 }
+                Collections.reverse(experiences);
                 callback.onSuccess(experiences);
             }
 

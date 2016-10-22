@@ -5,11 +5,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import com.app.godfather.R;
 import com.app.godfather.addyouremail.AddYourEmailContract;
+import com.app.godfather.domain.entity.Experience;
+import com.app.godfather.infrastructure.ExperienceRepository;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -18,6 +21,8 @@ import butterknife.OnClick;
  */
 public class AddYourExperienceFragment extends Fragment implements AddYourEmailContract.View{
 
+    @BindView(R.id.experience_text)
+    EditText mExperienceText;
 
     public static AddYourExperienceFragment newInstance(){
         AddYourExperienceFragment fragment = new AddYourExperienceFragment();
@@ -30,13 +35,13 @@ public class AddYourExperienceFragment extends Fragment implements AddYourEmailC
         View view = inflater.inflate(R.layout.add_your_experience_frag, container, false);
         ButterKnife.bind(this, view);
 
-
         return view;
     }
 
     @Override
     @OnClick(R.id.enviar_experiencia)
-    public void goToNextScreen() {
-        Toast.makeText(getContext(), "ENVIADO", Toast.LENGTH_SHORT).show();
+    public void saveExperience() {
+        ExperienceRepository.getInstance().save(new Experience(mExperienceText.getText().toString()));
+        getActivity().finish();
     }
 }

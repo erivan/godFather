@@ -39,6 +39,7 @@
         android:layout_height="wrap_content">
 
         <EditText
+            android:id="@+id/experience_text"
             android:layout_margin="16dp"
             android:background="@drawable/shape_round_white"
             android:layout_width="match_parent"

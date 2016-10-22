@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9AC6FF">
+    android:background="#9AC6FF"
+              xmlns:tools="http://schemas.android.com/tools"
+    >
 
 
     <ScrollView
@@ -24,9 +26,10 @@
                 android:textColor="@color/white"/>
 
             <TextView
+                android:id="@+id/created_at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="22 de outubro de 2016"
+                tools:text="22 de outubro de 2016"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:layout_marginBottom="30dp"/>

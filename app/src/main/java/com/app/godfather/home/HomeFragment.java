@@ -32,22 +32,6 @@ public class HomeFragment extends Fragment implements HomeContract.View {
        View view = inflater.inflate(R.layout.home_frag, container, false);
         ButterKnife.bind(this, view);
 
-//        ExperienceRepository.getInstance().save(new Experience("New Experience", new Date()));
-//
-//        ExperienceRepository.getInstance().all(new LoadExperiencesCallback() {
-//            @Override
-//            public void onSuccess(List<Experience> experiences) {
-//                Log.d("HERE", experiences.size() + "");
-//                for(Experience experience : experiences) {
-//                }
-//            }
-//        });
-
-//        User user = new User("god_fathermail@example.com", User.GOD_FATHER);
-//        user.addSonEmail("ermailexamplecom");
-//        UserRepository.getInstance().save(user);
-
-
         return view;
     }
 

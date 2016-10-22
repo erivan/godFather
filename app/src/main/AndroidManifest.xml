@@ -23,6 +23,10 @@
         <activity android:name=".addgodfatheremail.AddGodFatherEmailActivity">
 
         </activity>
+
+        <activity android:name=".addyourexperience.AddYourExperienceActivity">
+
+        </activity>
     </application>
 
 </manifest>

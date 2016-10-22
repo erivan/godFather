@@ -1,19 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryBlue">
+    android:background="#9AC6FF"
+    android:id="@+id/experiences_frag">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/add_experience_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
+        android:layout_height="?attr/actionBarSize"
+        android:background="#9AC6FF"
+        android:theme="@style/AppTheme.ActionBarTheme">
 
-        <TextView
-            android:text="@string/add_experience"
+        <LinearLayout
             android:layout_gravity="center"
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/add_experience"
+                android:textSize="20dp"
+                android:textColor="#3C4D63" />
+
+        </LinearLayout>
 
     </android.support.v7.widget.Toolbar>
 
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_margin="16dp"
+            android:background="@drawable/shape_round_white"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/enviar_experiencia"
+        android:text="Enviar"
+        android:textColor="@color/white"
+        android:background="@color/blue_background"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"/>
+
+
+
+
+</RelativeLayout>

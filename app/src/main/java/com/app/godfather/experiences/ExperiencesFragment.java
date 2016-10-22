@@ -1,5 +1,6 @@
 package com.app.godfather.experiences;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import com.app.godfather.R;
 
 import android.support.annotation.Nullable;
+import android.widget.Toast;
 
 import com.app.godfather.addyourexperience.AddYourExperienceActivity;
 import com.app.godfather.domain.entity.Experience;
@@ -88,6 +90,12 @@ public class ExperiencesFragment extends Fragment implements ExperiencesContract
 
     @Override
     public void callHelp() {
+        Context context = mViewPager.getContext();
+        CharSequence text = "Ajuda a caminho!";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
 
     }
 

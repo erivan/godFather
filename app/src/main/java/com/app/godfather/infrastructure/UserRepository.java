@@ -27,7 +27,7 @@ public class UserRepository {
     }
 
     public void save(User user) {
-        String emailKey = user.getEmail().replace("@", "").replace(".", "").replace("#", "");
+        String emailKey = adjustEmail(user.getEmail());
         mRef.child(emailKey).setValue(user);
     }
 
@@ -36,6 +36,8 @@ public class UserRepository {
     }
 
     public void findByEmail(String email, final LoadUserCallback callback ) {
+        String emailKey = adjustEmail(email);
+
         final ValueEventListener postListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -44,6 +46,10 @@ public class UserRepository {
             @Override public void onCancelled(DatabaseError error) { }
         };
         mRef.removeEventListener(postListener);
-        mRef.child(email).addValueEventListener(postListener);
+        mRef.child(emailKey).addValueEventListener(postListener);
+    }
+
+    private String adjustEmail(String email) {
+        return email.replace("@", "").replace(".", "").replace("#", "");
     }
 }

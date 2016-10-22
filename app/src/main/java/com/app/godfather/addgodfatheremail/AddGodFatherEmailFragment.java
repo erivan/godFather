@@ -15,6 +15,7 @@ import com.app.godfather.R;
 import com.app.godfather.domain.entity.User;
 import com.app.godfather.experiences.ExperiencesActivity;
 import com.app.godfather.infrastructure.UserRepository;
+import com.app.godfather.infrastructure.UserRepository.LoadUserCallback;
 import com.app.godfather.utils.ValidationErrorWrapper;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -47,9 +48,11 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
 
     private Dialog welcomeDialog;
     private Validator mValidator;
+    private String mChemicalDependentEmail;
 
-    public static AddGodFatherEmailFragment newInstance(){
+    public static AddGodFatherEmailFragment newInstance(String chemicalDependentEmail){
         AddGodFatherEmailFragment fragment = new AddGodFatherEmailFragment();
+        fragment.mChemicalDependentEmail = chemicalDependentEmail;
 
         return fragment;
     }
@@ -89,8 +92,17 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
 
     @Override
     public void onValidationSucceeded() {
+        UserRepository.getInstance().findByEmail(mChemicalDependentEmail, new LoadUserCallback() {
+            @Override
+            public void onSuccess(User user) {
+                user.addFatherEmail(mFillGodfatherEmail.getText().toString());
+                UserRepository.getInstance().save(user);
+            }
+        });
         User user = new User(mFillGodfatherEmail.getText().toString(), User.GOD_FATHER);
+        user.addSonEmail(mChemicalDependentEmail);
         UserRepository.getInstance().save(user);
+
         welcomeDialog.show();
     }
 

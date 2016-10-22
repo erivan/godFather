@@ -17,8 +17,6 @@ public class GodsonsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.experiences_act);
 
-
-
         mGodsonsFragment = GodsonsFragment.newInstance();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.experiences_content_frame, mGodsonsFragment).commit();

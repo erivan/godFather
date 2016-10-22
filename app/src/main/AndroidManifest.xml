@@ -33,6 +33,11 @@
             android:theme="@style/AppTheme.ActionBarTheme">
 
         </activity>
+
+        <activity android:name=".godsons.GodsonsActivity"
+                  android:theme="@style/AppTheme.ActionBarTheme">
+
+        </activity>
     </application>
 
 </manifest>

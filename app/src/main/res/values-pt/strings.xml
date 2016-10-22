@@ -13,4 +13,6 @@
     <string name="saripaar_email_message">E-mail inválido</string>
     <string name="saripaar_empty_message">Campo obrigatório</string>
 
+    <string name="add_experience">Nova Experiência</string>
+
 </resources>

@@ -15,8 +15,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".addyouremail.AddYourEmailActivity">
+
+        </activity>
         
-        <activity android:name=".add_godfather_email.AddGodFatherEmailActivity">
+        <activity android:name=".addgodfatheremail.AddGodFatherEmailActivity">
+
+        </activity>
+
+        <activity android:name=".experiences.ExperiencesActivity"
+            android:theme="@style/AppTheme.ActionBarTheme">
+        </activity>
+
+        <activity android:name=".addyourexperience.AddYourExperienceActivity">
 
         </activity>
     </application>

@@ -1,4 +1,4 @@
-package com.app.godfather.add_godfather_email;
+package com.app.godfather.addyourexperience;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,12 +12,12 @@ import com.app.godfather.R;
 import butterknife.ButterKnife;
 
 /**
- * Created by root on 21/10/16.
+ * Created by root on 22/10/16.
  */
-public class AddGodFatherEmailFragment extends Fragment {
+public class AddYourExperienceFragment extends Fragment {
 
-    public static AddGodFatherEmailFragment newInstance(){
-        AddGodFatherEmailFragment fragment = new AddGodFatherEmailFragment();
+    public static AddYourExperienceFragment newInstance(){
+        AddYourExperienceFragment fragment = new AddYourExperienceFragment();
 
         return fragment;
     }
@@ -25,9 +25,10 @@ public class AddGodFatherEmailFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.add_godfather_email_frag, container, false);
+        View view = inflater.inflate(R.layout.add_your_experience_frag, container, false);
         ButterKnife.bind(this, view);
 
-        return super.onCreateView(inflater, container, savedInstanceState);
+
+        return view;
     }
 }

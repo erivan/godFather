@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">GodFather</string>
+    <string name="welcome_tittle">Congratulation!</string>
 
     <string name="main_screen.addict_tittle">Addict</string>
     <string name="main_screen.godfather_tittle">Godfather</string>
+    <string name="add_your_email_hint">Please enter your email</string>
+    <string name="add_godfather_email.put_godfather_email_hint">Please enter your godfather email</string>
 </resources>

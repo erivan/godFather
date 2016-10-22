@@ -50,9 +50,9 @@ public class GodsonsFragment  extends Fragment implements GodsonsContract.View{
 
         mGodsons = new ArrayList<String>();
 
-        mGodsons.add(0, "Nam commodo tempus ve");
-        mGodsons.add(1, "Cras sit ametommodo te");
-        mGodsons.add(2, " Donec dignissim purus");
+        mGodsons.add(0, "erivan@gmail.com");
+        mGodsons.add(1, "denis@gmail.com");
+        mGodsons.add(2, "gabe@gmail.com");
 
         mGodsonsAdapter    = new GodsonsAdapter(getContext(), mGodsons);
     }

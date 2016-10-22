@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import com.app.godfather.R;
 
 import android.support.annotation.Nullable;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,7 @@ import butterknife.ButterKnife;
 /**
  * Created by denisvieira on 21/10/16.
  */
-public class ExperiencesFragment extends Fragment {
+public class ExperiencesFragment extends Fragment implements ExperiencesContract.View{
 
     @BindView(R.id.experiences_view_pager)
     ViewPager mViewPager;
@@ -66,7 +65,7 @@ public class ExperiencesFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, final MenuInflater inflater) {
-        getActivity().getMenuInflater().inflate(R.menu.get_out, menu);
+        getActivity().getMenuInflater().inflate(R.menu.logout_menu, menu);
 
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -79,5 +78,15 @@ public class ExperiencesFragment extends Fragment {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void callHelp() {
+
+    }
+
+    @Override
+    public void shareExperience() {
+
     }
 }

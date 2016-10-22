@@ -6,5 +6,10 @@
     <string name="main_screen.godfather_tittle">Godfather</string>
     <string name="add_your_email_hint">Please enter your email</string>
     <string name="add_godfather_email.put_godfather_email_hint">Please enter your godfather email</string>
+
     <string name="add_experience">New Experience</string>
+
+    <string name="godsons_suggestion">You can offer help to their godchildren. Select godson to make a call.</string>
+    <string name="godsons">Godsons</string>
+
 </resources>

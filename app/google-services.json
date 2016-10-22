@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "982502565878",
-    "firebase_url": "https://godfather-25d93.firebaseio.com",
-    "project_id": "godfather-25d93",
-    "storage_bucket": "godfather-25d93.appspot.com"
+    "project_number": "648242639488",
+    "firebase_url": "https://godfather-437fd.firebaseio.com",
+    "project_id": "godfather-437fd",
+    "storage_bucket": "godfather-437fd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:982502565878:android:243e0282b373466e",
+        "mobilesdk_app_id": "1:648242639488:android:243e0282b373466e",
         "android_client_info": {
           "package_name": "com.app.godfather"
         }
       },
       "oauth_client": [
         {
-          "client_id": "982502565878-8l5co1qg1cp1kgg0pfd22flda874mv86.apps.googleusercontent.com",
+          "client_id": "648242639488-ar38abfmnbniqpbf5rjfljesklj2p1d8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA5qtAtug-CPjEixQ9jWRyNyVuaXxZQqHg"
+          "current_key": "AIzaSyAZmXDKpSUtju_nQb0nn1iugyqLGmi8gO4"
         }
       ],
       "services": {

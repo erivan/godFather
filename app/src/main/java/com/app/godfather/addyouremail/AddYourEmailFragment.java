@@ -29,7 +29,7 @@ import butterknife.OnClick;
 /**
  * Created by root on 21/10/16.
  */
-public class AddYourEmailFragment extends Fragment implements  Validator.ValidationListener{
+public class AddYourEmailFragment extends Fragment implements  Validator.ValidationListener, AddYourEmailContract.View{
 
     @BindView(R.id.add_your_email_layout)
     TextInputLayout mAddYourEmailInputLayout;
@@ -89,12 +89,10 @@ public class AddYourEmailFragment extends Fragment implements  Validator.Validat
         }
     }
 
+    @Override
     @OnClick(R.id.btn_add_your_email)
-    public void openCongratsDialog() {
-
+    public void goToNextScreen() {
         mFillYourLayoutEmail.setError(null);
         mValidator.validate();
-
     }
-
 }

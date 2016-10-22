@@ -9,7 +9,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".home.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".addyouremail.AddYourEmailActivity">
@@ -22,11 +26,10 @@
 
         <activity android:name=".experiences.ExperiencesActivity"
             android:theme="@style/AppTheme.ActionBarTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".addyourexperience.AddYourExperienceActivity">
+
         </activity>
     </application>
 

@@ -27,7 +27,8 @@ public class UserRepository {
     }
 
     public void save(User user) {
-        mRef.child(user.getEmail().replace("@", "").replace(".", "")).setValue(user);
+        String emailKey = user.getEmail().replace("@", "").replace(".", "").replace("#", "");
+        mRef.child(emailKey).setValue(user);
     }
 
     public interface LoadUserCallback {

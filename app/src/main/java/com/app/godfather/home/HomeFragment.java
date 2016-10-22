@@ -36,7 +36,9 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
-//        UserRepository.getInstance().save(new User("mail@example.com", User.GOD_FATHER));
+//        User user = new User("god_fathermail@example.com", User.GOD_FATHER);
+//        user.addSonEmail("ermailexamplecom");
+//        UserRepository.getInstance().save(user);
 
 
         return view;

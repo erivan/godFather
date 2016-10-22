@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.app.godfather.R;
 import com.app.godfather.addyouremail.AddYourEmailActivity;
 
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -29,7 +30,7 @@ public class HomeFragment extends Fragment implements HomeContract.View {
     @Override
     public View onCreateView(LayoutInflater inflater, @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.home_frag, container, false);
-//        ButterKnife.bind(this, view);
+        ButterKnife.bind(this, view);
 
 //        ExperienceRepository.getInstance().save(new Experience("New Experience", new Date()));
 //

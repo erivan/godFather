@@ -3,9 +3,9 @@ package com.app.godfather.experiences.dto;
 /**
  * Created by denisvieira on 21/10/16.
  */
-public class Experience implements Serializable{
+public class Experience{
 
-    private String text;
+//    private String text;
 
 
 }

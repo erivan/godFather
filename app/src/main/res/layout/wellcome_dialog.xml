@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingRight="20dp"
+        android:background="@color/blue_background">
 
         <TextView
             android:textSize="25sp"
@@ -26,19 +27,15 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="agora você pode não morrer e chamar aquele bother para tomar uma quando tiver afim de tomar cerveja!"
+            android:text="Agora você está relacionado com o seu padrinho e ele poderá te ajudar sempre que você precisar, pressione ok para ir a tela principal do aplicativo!"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
     </LinearLayout>
-
-
-
-
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="52dp"
-        android:gravity="center_vertical|end"
+        android:layout_gravity="center_vertical|end"
         android:orientation="horizontal"
         android:padding="8dp">
 

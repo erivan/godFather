@@ -1,10 +1,9 @@
-package com.app.godfather.add_godfather_email;
+package com.app.godfather.addgodfatheremail;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.app.godfather.R;
-import com.app.godfather.home.HomeFragment;
 
 /**
  * Created by root on 21/10/16.

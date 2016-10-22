@@ -22,15 +22,31 @@ public class HomeFragment extends Fragment implements HomeContract.View {
     public static final String KEY_USER_TYPE = "KEY_USER";
 
     private boolean isAddict = false;
+
     public static HomeFragment newInstance(){
         return new HomeFragment();
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.home_frag, container, false);
+    public View onCreateView(LayoutInflater inflater, @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+       View view = inflater.inflate(R.layout.home_frag, container, false);
         ButterKnife.bind(this, view);
+
+//        ExperienceRepository.getInstance().save(new Experience("New Experience", new Date()));
+//
+//        ExperienceRepository.getInstance().all(new LoadExperiencesCallback() {
+//            @Override
+//            public void onSuccess(List<Experience> experiences) {
+//                Log.d("HERE", experiences.size() + "");
+//                for(Experience experience : experiences) {
+//                }
+//            }
+//        });
+
+//        User user = new User("god_fathermail@example.com", User.GOD_FATHER);
+//        user.addSonEmail("ermailexamplecom");
+//        UserRepository.getInstance().save(user);
+
 
         return view;
     }
@@ -57,6 +73,5 @@ public class HomeFragment extends Fragment implements HomeContract.View {
         intent.putExtras(mBundle);
 
         startActivity(intent);
-
-    }
+   }
 }

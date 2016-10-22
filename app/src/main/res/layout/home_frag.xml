@@ -46,6 +46,7 @@
                     app:theme="@style/Hover"/>
 
                 <TextView
+                    android:id="@+id/history"
                     android:textStyle="bold"
                     android:layout_marginTop="20dp"
                     android:text="@string/main_screen.addict_tittle"

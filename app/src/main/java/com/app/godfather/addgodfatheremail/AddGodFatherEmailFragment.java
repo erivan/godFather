@@ -71,7 +71,6 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getContext(), ExperiencesActivity.class);
-
                 startActivity(i);
             }
         });

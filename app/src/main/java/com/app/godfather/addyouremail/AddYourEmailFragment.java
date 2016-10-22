@@ -16,6 +16,7 @@ import com.app.godfather.R;
 import com.app.godfather.addgodfatheremail.AddGodFatherEmailActivity;
 import com.app.godfather.domain.entity.User;
 import com.app.godfather.infrastructure.UserRepository;
+import com.app.godfather.infrastructure.UserSession;
 import com.app.godfather.utils.ValidationErrorWrapper;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -70,18 +71,21 @@ public class AddYourEmailFragment extends Fragment implements  Validator.Validat
 
     @Override
     public void onValidationSucceeded() {
+        User user;
         if (isAddict){
-            User user = new User(mFillYourLayoutEmail.getText().toString(), User.CHEMICAL_DEPENDENT);
+            user = new User(mFillYourLayoutEmail.getText().toString(), User.CHEMICAL_DEPENDENT);
             UserRepository.getInstance().save(user);
             Intent intent = new Intent(getContext(), AddGodFatherEmailActivity.class);
             startActivity(intent);
         }else{
-            User user = new User(mFillYourLayoutEmail.getText().toString(), User.GOD_FATHER);
+            user = new User(mFillYourLayoutEmail.getText().toString(), User.GOD_FATHER);
             UserRepository.getInstance().save(user);
             Toast.makeText(getContext(), "GODFATHER", Toast.LENGTH_SHORT).show();
 //            Intent intent = new Intent(getContext(), AddGodFatherEmailActivity.class);
 //            startActivity(intent);
         }
+        UserSession userSession = new UserSession(getContext());
+        userSession.newSession(user.getEmail());
     }
 
     @Override

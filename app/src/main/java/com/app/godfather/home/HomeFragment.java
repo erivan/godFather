@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.app.godfather.R;
 import com.app.godfather.addyouremail.AddYourEmailActivity;
+import com.app.godfather.experiences.ExperiencesActivity;
+import com.app.godfather.infrastructure.UserSession;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -31,6 +33,13 @@ public class HomeFragment extends Fragment implements HomeContract.View {
     public View onCreateView(LayoutInflater inflater, @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.home_frag, container, false);
         ButterKnife.bind(this, view);
+
+        UserSession userSession = new UserSession(getContext());
+        if (userSession.getSessionEmail() != null) {
+            Intent i = new Intent(getContext(), ExperiencesActivity.class);
+            startActivity(i);
+        }
+
 
         return view;
     }

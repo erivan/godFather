@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="Agora você está relacionado com o seu padrinho e ele poderá te ajudar sempre que você precisar, pressione ok para ir a tela principal do aplicativo!"
+            android:text="Seu padrinho recebeu seu convite, você será notificado quando for aceito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

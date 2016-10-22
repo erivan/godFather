@@ -18,7 +18,7 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="#ffffff"
-            android:text="Texto de boas vindas do app, para você que está se drogando e quer parar de usar as drogas da vida e tudo mais, por favor, escolha o seu tipo de usuário, valheu"
+            android:text="Escolha o tipo de cadastro que deseja realizar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

@@ -33,6 +33,9 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
     @BindView(R.id.btn_add_godfather_email)
     TextView mBtnOkForGodfatherEmail;
 
+    @BindView(R.id.layout_email)
+    TextInputLayout mTextInputLayout;
+
 
     @NotEmpty(sequence = 1, messageResId = R.string.saripaar_empty_message)
     @Email(sequence    = 2, messageResId = R.string.saripaar_email_message)
@@ -56,6 +59,8 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
 
         mValidator = new Validator(this);
         mValidator.setValidationListener(this);
+
+        mTextInputLayout.setHintAnimationEnabled(false);
 
         welcomeDialog = new Dialog(getContext(), R.style.DialogTheme);
         welcomeDialog.setContentView(R.layout.wellcome_dialog);

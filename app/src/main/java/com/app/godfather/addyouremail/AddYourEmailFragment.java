@@ -31,8 +31,8 @@ import butterknife.OnClick;
  */
 public class AddYourEmailFragment extends Fragment implements  Validator.ValidationListener{
 
-//    @BindView(R.id.btn_add_your_email)
-//    TextView mBtnOkForGodfatherEmail;
+    @BindView(R.id.add_your_email_layout)
+    TextInputLayout mAddYourEmailInputLayout;
 
 
     @NotEmpty(sequence = 1, messageResId = R.string.saripaar_empty_message)

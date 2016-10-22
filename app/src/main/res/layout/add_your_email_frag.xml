@@ -60,7 +60,7 @@
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:layout_marginTop="20dp"
-                    android:text="OK"
+                    android:text="Enviar"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_width="wrap_content"

@@ -1,8 +1,8 @@
 package com.app.godfather.addgodfatheremail;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.app.godfather.R;
+import com.app.godfather.experiences.ExperiencesActivity;
 import com.app.godfather.utils.ValidationErrorWrapper;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
@@ -51,9 +52,8 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.add_godfather_email_frag, container, false);
         ButterKnife.bind(this, view);
 
@@ -64,6 +64,15 @@ public class AddGodFatherEmailFragment extends Fragment implements AddGodFatherE
 
         welcomeDialog = new Dialog(getContext(), R.style.DialogTheme);
         welcomeDialog.setContentView(R.layout.wellcome_dialog);
+        TextView btnDialogGo = (TextView) welcomeDialog.findViewById(R.id.btn_dialog_go);
+        btnDialogGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), ExperiencesActivity.class);
+
+                startActivity(i);
+            }
+        });
 
         return view;
     }

@@ -1,11 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
         <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
             <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
             <item name="colorPrimary" >@color/white</item>
             <item name="colorPrimaryDark">@color/primaryBlue</item>
-            <item name="colorAccent">@color/gray</item>
+            <item name="colorAccent">@color/blue_background</item>
             <item name="actionMenuTextColor">@color/black</item>
     </style>
 
